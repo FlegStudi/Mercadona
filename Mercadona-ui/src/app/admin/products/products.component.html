@@ -1,0 +1,83 @@
+<div class="container-fluid pt-2">
+  <div class="row">
+
+    <div class="col-md-6 vert-center">
+      <div class="product-form">
+        <h5 class="text-center title-app">Add a product</h5>
+
+        <form (ngSubmit)="onSubmit()" #productForm="ngForm" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="label">*Nom du product:</label>
+            <input type="text" id="label" name="label" class="form-control" [(ngModel)]="product.label" required>
+          </div>
+
+          <div class="form-group">
+            <label for="description">*Description:</label>
+            <textarea id="description" name="description" class="form-control" [(ngModel)]="product.description" maxlength="200"
+              required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="label">*Image</label>
+            <input type="file" id="img" name="image" class="form-control" accept="image/*" required
+              (change)="handleFileInput($event)">
+          </div>
+
+          <div class="form-group">
+            <label for="price">*Price:</label>
+            <input type="number" id="price" name="price" class="form-control" [(ngModel)]="product.price" min="0" required>
+          </div>
+
+          <div class="form-group">
+            <label for="category">*Catégorie:</label>
+            <select [(ngModel)]="product.categoryId" name="categoryId" class="form-control" required>
+              <option *ngFor="let category of categories" [value]="category.categoryId" >{{ category.label }}
+              </option>
+            </select>
+
+          </div>
+
+          <div class="form-group">
+            <label for="category">Promotion:</label>
+            <select [(ngModel)]="product.promotionId" name="promotionId" class="form-control">
+              <option value=0>None promotion</option>
+              <option *ngFor="let promotion of promotions" [value]="promotion.promotionId">{{ promotion.discount }} %
+              </option>
+            </select>
+
+          </div>
+          <div class="text-center pt-3">
+            <p *ngIf="errorMsg">Please fill in all the mandatory fields. </p>
+            <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid">Add a product</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-md-6 mt-2">
+      <h5 class="text-center title-app">Products list:</h5>
+      <div class="products">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Label</th>
+              <th scope="col">Price</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let p of products">
+
+              <td>{{p.productId}}</td>
+              <td>{{p.label}}</td>
+              <td>{{p.price}}</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>

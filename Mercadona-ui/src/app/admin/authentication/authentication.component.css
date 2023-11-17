@@ -1,0 +1,18 @@
+.form {
+  width: 60%; /* largeur par défaut pour les appareils mobiles */
+  max-width: 500px; /* largeur maximale pour tous les écrans */
+  box-sizing: border-box;
+  padding: 0 1rem;
+}
+.parent-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+@media screen and (min-width: 768px) {
+  /* largeur de l'écran à partir de 768px */
+  .form {
+    width: 40%; /* largeur pour les grands écrans */
+  }
+}

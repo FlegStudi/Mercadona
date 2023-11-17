@@ -1,0 +1,34 @@
+
+
+
+<div class="container">
+  <div class="row mt-4" >
+    <div class="col-md-6  mb-2 text-center">
+      <h5 class="title-app">Add a category: </h5>
+
+      <form #catForm="ngForm" (ngSubmit)="submit()">
+        <input class="form-control" type ="text" name="label" [(ngModel)] = "label"><br>
+        <button type = "submit" class="btn btn-primary" [disabled] = "label == null || label == '' ">Save</button>
+      </form>
+
+    </div>
+    <div class="col-md-6 text-center">
+      <h5 class="title-app">Categories list</h5>
+      <div *ngFor="let cat of categories">
+
+
+
+
+
+      <div class="card mb-1 shadow-sm">
+        <div class="card-body">
+          <p class="card-title">{{cat.label}}</p>
+
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+.card-img{
+  width: 11rem;
+  height: 9rem;
+  margin: 0 auto;
+}
+
+.card{
+  text-align: center;
+  max-height: 20rem;
+  overflow: hidden;
+  height: 20rem;
+  border: unset;
+}
+p{
+  font-size: 0.8rem;
+}
+.item{
+  margin-bottom: 1%;
+}
+.promo-text{
+  font-size: 0.8em;
+  color: #edc6a6;
+  font-weight: 900;
+}
+.promo-div{
+  background-color: #dfa97d;
+  width: max-content;
+  position: absolute;
+  left: 1rem;
+  color: white;
+  padding: 0 5px;
+}
+.line {
+  text-decoration: line-through;
+  font-weight: bold;
+}
+ul {
+  list-style-type: none;
+  margin-top: 4px;
+}
+
+.container-fluid{
+  background: #f0f1f1;
+  min-height: 100vh;
+}
+.card-title {
+  font-size: 1.3em;
+  padding: 4%;
+  padding-top: 10%;
+}
+.title{
+  font-size: x-large;
+  padding: 2%;
+  font-weight: 900;
+}
+.title-container{
+  padding: 2vh;
+}
+/* ::ng-deep .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background{
+  background-color: red;
+} */
+.card-text{
+  border-top: #edc6a6 solid;
+}
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* ou une hauteur fixe si vous préférez */
+}
+
+::ng-deep .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled~.mdc-checkbox__background .mdc-checkbox__checkmark {
+  background: #3E3E3E !important;
+  border-color: #3E3E3E !important;
+}
+
+::ng-deep  .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background, .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background, .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate=true]:enabled~.mdc-checkbox__background {
+  border-color: #3E3E3E !important;
+
+}

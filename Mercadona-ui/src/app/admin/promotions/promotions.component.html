@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row pt-4">
+    <div class="col-md-6">
+      <div class="text-center">
+        <h5 class="title-app">Add a promotion</h5>
+          <form #promoForm = ngForm (submit)="submitForm()">
+            <div >
+              <label for = "startDate">*Start Date</label>
+              <input  class="form-control" name = "startDate" type="date"  [(ngModel)]="startDate" [min]="today | date:'yyyy-MM-dd'" required>
+            </div>
+            <div >
+              <label for = "endDate">*End Date</label>
+              <input  class="form-control" name = "endDate" type="date" [(ngModel)]="endDate"  [min]="startDate| date:'yyyy-MM-dd' " required>
+            </div>
+            <div >
+              <label for = "discount">*Discount</label>
+              <input class="form-control" name = "discount" type="number" [(ngModel)] = "discount"  min="0" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3" [disabled]="!promoForm.valid">Save</button>
+            <div style="color:red" *ngIf="errorDate">La date de début de promotion doit être inférieure à la date de fin de promotion</div>
+          </form>
+      </div>
+
+    </div>
+    <div class="col-md-6">
+      <div class="text-center">
+
+        <h5 class="title-app">Promotions List</h5>
+        <table class="table">
+          <thead>
+            <tr>
+
+              <th scope="col">Start Date </th>
+              <th scope="col">End Date</th>
+              <th scope="col">Discount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let promo of promotions">
+
+              <td>{{promo.start  | date: 'dd/MM/yyyy'}}</td>
+              <td>{{promo.end  | date: 'dd/MM/yyyy'}}</td>
+              <td>{{promo.discount}} %</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

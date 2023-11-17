@@ -1,0 +1,42 @@
+
+
+textarea {
+  height: 6em;
+}
+
+input, select{
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  height: 2.6em !important;
+  font-size: 01em;
+}
+
+select {
+  height: 2em;
+}
+button{
+height: 2em;
+  margin: 0 auto;
+  font-size: 1.2em;
+  line-height: normal;
+}
+.products{
+height: 75vh;
+overflow-x: unset;
+overflow-y: scroll;
+
+}
+
+
+
+.vert-center {
+display: flex;
+align-items: center;
+justify-content: center;
+height: 80vh;
+}
+
+.product-form {
+width: 70%;
+}
