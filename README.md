@@ -16,3 +16,9 @@ Product : id, label, descritoion, price, category
 Category : id, label
 Promotion : start date, end date, discount procentage
 User : Login, password
+
+Enviroment de dévelopement:
+Asp.Net version 8.0
+Angular version 16.2
+PostgreSQL sur pgAdmin 4
+
